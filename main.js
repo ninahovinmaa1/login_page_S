@@ -18,10 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
         lsArr = lsnamestuff.split(","); 
         
         if ( lsArr.includes(arg) ) {
-            console.log("Already in ls")
+            console.log("Already in ls");
+            displayWelcomeBack(arg);
+
         } else {
             console.log("nada in local storage")
         }
+    }
+
+    function displayWelcomeBack(name){
+        let welcomeBack = document.getElementById("welcome-back");
+        welcomeBack.style.display = "block";
     }
 
     // function to compare if input name is same as in localstorage. If yes -> page "Welcome Back", if no -> "Welcome ${inputname}"
@@ -34,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Login name: " + name);
         
         checkIfNameIsInLocalStorage(name);
+        //invoke displayWelcomeBack or displayWelcomeNew inside^
 
         
     })
